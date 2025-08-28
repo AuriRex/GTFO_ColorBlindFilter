@@ -37,12 +37,19 @@ public static class ColorBlindnessValues
         { ColorBlindMode.Achromatomaly, 1.3f },
     };
 
+    public static readonly Color[] CustomColors = [ new(1, 0, 0), new(0, 1, 0), new(0, 0, 1) ];
+    
     public static void ApplyMode(ColorBlindMode mode)
     {
         if (!Colors.TryGetValue(mode, out var colors)
             && !Colors.TryGetValue(ColorBlindMode.Normal, out colors))
             return;
 
+        if (mode == ColorBlindMode.Custom)
+        {
+            colors = CustomColors;
+        }
+        
         if (!Multipliers.TryGetValue(mode, out var multiplier)
             && !Multipliers.TryGetValue(ColorBlindMode.Normal, out multiplier))
             return;

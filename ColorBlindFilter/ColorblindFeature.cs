@@ -6,6 +6,7 @@ using TheArchive.Core.Attributes.Feature.Patches;
 using TheArchive.Core.Attributes.Feature.Settings;
 using TheArchive.Core.FeaturesAPI;
 using TheArchive.Core.FeaturesAPI.Settings;
+using TheArchive.Core.Models;
 using TheArchive.Interfaces;
 using TheArchive.Utilities;
 using UnityEngine;
@@ -47,8 +48,24 @@ public class ColorblindFeature : Feature
         public ColorBlindMode Mode { get; set; } = ColorBlindMode.Normal;
 
         [FSDisplayName("Luminance Boost")]
-        [FSDescription("Boosts the overall color values that get applied.\nTry disabling this if the image is too bright!")]
+        [FSDescription("Boosts the overall color values that get applied.\nTry disabling this if the image is too bright!\n\n(Does <u>not</u> apply to Custom!)")]
         public bool Boost { get; set; } = true;
+        
+        [FSHeader(":// Custom Color Mixer Settings")]
+        [FSDisplayName("Red Channel")]
+        [FSDescription("How to transform the red color channel.\n\nMake sure to select the 'Custom' Mode above!")]
+        [FSIdentifier("Color.Red")]
+        public SColor CustomRed { get; set; } = new SColor(1, 0, 0);
+        
+        [FSDisplayName("Green Channel")]
+        [FSDescription("How to transform the green color channel.\n\nMake sure to select the 'Custom' Mode above!")]
+        [FSIdentifier("Color.Green")]
+        public SColor CustomGreen { get; set; } = new SColor(0, 1, 0);
+        
+        [FSDisplayName("Blue Channel")]
+        [FSDescription("How to transform the blue color channel.\n\nMake sure to select the 'Custom' Mode above!")]
+        [FSIdentifier("Color.Blue")]
+        public SColor CustomBlue { get; set; } = new SColor(0, 0, 1);
     }
     
     private static ApplyShader _menuCBApplier;
@@ -58,6 +75,7 @@ public class ColorblindFeature : Feature
     public enum ColorBlindMode
     {
         Normal,
+        Custom,
         Protanopia,
         Protanomaly,
         Deuteranopia,
@@ -80,12 +98,25 @@ public class ColorblindFeature : Feature
     public override void OnGameDataInitialized()
     {
         TryLoadMaterial();
+        
+        SetCustomColors();
+
         ApplySettings(Settings);
+    }
+
+    private static void SetCustomColors()
+    {
+        ColorBlindnessValues.CustomColors[0] = Settings.CustomRed.ToUnityColor();
+        ColorBlindnessValues.CustomColors[1] = Settings.CustomGreen.ToUnityColor();
+        ColorBlindnessValues.CustomColors[2] = Settings.CustomBlue.ToUnityColor();
     }
 
     public override void OnEnable()
     {
         TryLoadMaterial();
+        
+        SetCustomColors();
+        ApplySettings(Settings);
         
         ApplyShaderTo(CM_Camera.Current);
         
@@ -120,6 +151,11 @@ public class ColorblindFeature : Feature
 
     public override void OnFeatureSettingChanged(FeatureSetting setting)
     {
+        if (setting.Identifier.StartsWith("Color."))
+        {
+            SetCustomColors();
+        }
+        
         ApplySettings(Settings);
     }
 
