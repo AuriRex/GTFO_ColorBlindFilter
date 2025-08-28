@@ -18,5 +18,6 @@
     <!-- Other Dependencies -->
     <ItemGroup>
         <Reference Include="$(PluginsFolder)/GTFO-API.dll" Private="false" />
+        <Reference Include="$(PluginsFolder)/**/TheArchive.Core.dll" Private="false" />
     </ItemGroup>
 </Project>

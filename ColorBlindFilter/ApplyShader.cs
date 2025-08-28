@@ -6,6 +6,6 @@ public class ApplyShader : MonoBehaviour
 {
     void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
-        Graphics.Blit(source, destination, Plugin.Material);
+        Graphics.Blit(source, destination, ColorBlindnessValues.Material);
     }
 }

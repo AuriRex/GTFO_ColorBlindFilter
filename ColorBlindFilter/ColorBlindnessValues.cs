@@ -1,10 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static ColorBlindFilter.ColorblindFeature;
 
 namespace ColorBlindFilter;
 
 public static class ColorBlindnessValues
 {
+    public static Material Material { get; internal set; }
+    
+    public static bool Boost { get; set; }
+    
     public static float GlobalMultiplier { get; set; } = 1f;
     
     public static readonly Dictionary<ColorBlindMode, Color[]> Colors = new() {
@@ -31,7 +36,7 @@ public static class ColorBlindnessValues
         { ColorBlindMode.Achromatopsia, 1.55f },
         { ColorBlindMode.Achromatomaly, 1.3f },
     };
-    
+
     public static void ApplyMode(ColorBlindMode mode)
     {
         if (!Colors.TryGetValue(mode, out var colors)
@@ -42,7 +47,10 @@ public static class ColorBlindnessValues
             && !Multipliers.TryGetValue(ColorBlindMode.Normal, out multiplier))
             return;
         
-        var mat = Plugin.Material;
+        if (!Boost)
+            multiplier = 1f;
+        
+        var mat = Material;
         
         mat.SetColor("_R", colors[0] * multiplier * GlobalMultiplier);
         mat.SetColor("_G", colors[1] * multiplier * GlobalMultiplier);

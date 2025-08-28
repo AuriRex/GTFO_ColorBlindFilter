@@ -2,13 +2,14 @@
     <PropertyGroup>
         <TSName>ColorBlindFilter</TSName>
         <TSAuthor>AuriRex</TSAuthor>
-        <TSVersion>0.0.1</TSVersion> <!-- TSVersion empty = GitInfo used instead (if available; check nuget) -->
-        <TSWebsite>https://github.com/Link/To/Repo/</TSWebsite>
-        <TSDescription>Description</TSDescription>
+        <TSVersion>2025.1.0</TSVersion> <!-- TSVersion empty = GitInfo used instead (if available; check nuget) -->
+        <TSWebsite>https://github.com/AuriRex/GTFO_ColorBlindFilter</TSWebsite>
+        <TSDescription>Adds a color blind post processing effect to the game.</TSDescription>
     </PropertyGroup>
     <ItemGroup>
         <!-- Add the Dependency strings here, one for each dependency -->
-        <TSDependencyStrings Include="BepInEx-BepInExPack_GTFO-3.2.1" InProject="false" />
+        <TSDependencyStrings Include="BepInEx-BepInExPack_GTFO-3.2.2" InProject="false" />
+        <TSDependencyStrings Include="AuriRex-TheArchive_Core-2025.2.1" InProject="false" />
         <!-- <TSDependencyStrings Include="Some-Other-Dependency-1.2.3" InProject="false" /> -->
     </ItemGroup>
 </Project>
