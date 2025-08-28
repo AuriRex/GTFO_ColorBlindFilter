@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{1C0BFD83-9A87-429E-8E61-5FACD7EAFDB4}") = "ColorBlindFilter", "ColorBlindFilter\ColorBlindFilter.csproj", "{4E6E627F-2BD1-441A-894D-17CD072BD507}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5B92992E-C6F4-4AD7-BCA6-4DBE2B1364BD}"
+	ProjectSection(SolutionItems) = preProject
+		GameFolder.props = GameFolder.props
+		Dependencies.props = Dependencies.props
+		README.md = README.md
+		CHANGELOG.md = CHANGELOG.md
+		icon.png = icon.png
+		ManifestInfo.props = ManifestInfo.props
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E6E627F-2BD1-441A-894D-17CD072BD507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E6E627F-2BD1-441A-894D-17CD072BD507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E6E627F-2BD1-441A-894D-17CD072BD507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E6E627F-2BD1-441A-894D-17CD072BD507}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
