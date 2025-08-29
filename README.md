@@ -15,28 +15,28 @@ This mod adds a post-processing effect on the rendering camera, this is going to
 ## Color Filters
 
 <details>
-<summary>Normal Vision</summary>
+<summary>📷 Normal Vision</summary>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/0e1bb0d0-bf6a-4c67-8431-4efbe9fbe02e" alt="Normal Vision"/>
 </p>
 </details>
 
 <details>
-<summary>Protanopia</summary>
+<summary>📷 Protanopia</summary>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/d9e2812c-6480-48b7-87ae-4cea42b891f0" alt="Protanopia"/>
 </p>
 </details>
 
 <details>
-<summary>Deuteranopia</summary>
+<summary>📷 Deuteranopia</summary>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/b520787b-a4e3-42fb-ad7b-7b81189849cd" alt="Deuteranopia"/>
 </p>
 </details>
 
 <details>
-<summary>Tritanopia</summary>
+<summary>📷 Tritanopia</summary>
 <p align="center">
   <img src="https://github.com/user-attachments/assets/6e021721-dbdf-4f9b-9a19-937b4417e803" alt="Tritanopia"/>
 </p>
