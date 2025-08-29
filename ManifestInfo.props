@@ -1,10 +1,10 @@
 <Project>
     <PropertyGroup>
-        <TSName>ColorBlindFilter</TSName>
+        <TSName>Color_Blind_Filter</TSName>
         <TSAuthor>AuriRex</TSAuthor>
         <TSVersion>2025.1.0</TSVersion> <!-- TSVersion empty = GitInfo used instead (if available; check nuget) -->
         <TSWebsite>https://github.com/AuriRex/GTFO_ColorBlindFilter</TSWebsite>
-        <TSDescription>Adds a color blind post processing effect to the game.</TSDescription>
+        <TSDescription>Adds a color blind post processing filter to the game.</TSDescription>
     </PropertyGroup>
     <ItemGroup>
         <!-- Add the Dependency strings here, one for each dependency -->

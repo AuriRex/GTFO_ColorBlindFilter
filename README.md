@@ -6,6 +6,8 @@ Adds a configurable colorblind post-processing effect to the game.
 Useful for simulating how a person with colorblindness might be seeing the game or just for changing up the visuals.  
 A custom color channel mixer option *might* be able to make the game more readable for actual colorblind people. (ymmv)
 
+This mod adds a post-processing effect on the rendering camera, this is going to cost a little more GPU resources than without this mod installed & enabled.  
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/b69df2c1-a5ae-47cd-9a51-d99f2a04dfc7" alt="Mod settings page"/>
 </p>
@@ -48,4 +50,4 @@ A custom color channel mixer option *might* be able to make the game more readab
 
 ## Additional Credits
 
-Based on [Alen Zucconis' Blog from 2015](https://www.alanzucconi.com/2015/12/16/color-blindness/)
+Mostly based on [Alen Zucconis' blog about color-blindness](https://www.alanzucconi.com/2015/12/16/color-blindness/).
